@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create(config('ld-likes.table', 'ld_reactions'), function (Blueprint $table) {
+        Schema::create(config('sb-likes.table', 'ld_reactions'), function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('reactable_type'); // Polymorphic: App\Models\Post, etc.
@@ -29,6 +29,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists(config('ld-likes.table', 'ld_reactions'));
+        Schema::dropIfExists(config('sb-likes.table', 'ld_reactions'));
     }
 };

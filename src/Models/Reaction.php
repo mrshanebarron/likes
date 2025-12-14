@@ -13,12 +13,12 @@ class Reaction extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->setTable(config('ld-likes.table', 'ld_reactions'));
+        $this->setTable(config('sb-likes.table', 'ld_reactions'));
     }
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('ld-likes.user_model', \App\Models\User::class));
+        return $this->belongsTo(config('sb-likes.user_model', \App\Models\User::class));
     }
 
     public function reactable(): MorphTo
@@ -28,7 +28,7 @@ class Reaction extends Model
 
     public function getReactionConfigAttribute(): ?array
     {
-        return config("ld-likes.reactions.{$this->reaction}");
+        return config("sb-likes.reactions.{$this->reaction}");
     }
 
     public function getEmojiAttribute(): string

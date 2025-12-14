@@ -42,13 +42,13 @@ class Reactions extends Component
         $this->modelType = get_class($model);
         $this->modelId = $model->getKey();
 
-        $this->showCounts = $showCounts ?? config('ld-likes.show_counts', true);
-        $this->showSummary = $showSummary ?? config('ld-likes.show_summary', true);
+        $this->showCounts = $showCounts ?? config('sb-likes.show_counts', true);
+        $this->showSummary = $showSummary ?? config('sb-likes.show_summary', true);
         $this->pickerPosition = $pickerPosition;
         $this->size = $size;
         $this->animated = $animated;
         $this->guestReactions = $guestReactions;
-        $this->reactions = !empty($reactions) ? $reactions : config('ld-likes.reactions', []);
+        $this->reactions = !empty($reactions) ? $reactions : config('sb-likes.reactions', []);
 
         $this->loadState();
     }
@@ -100,13 +100,13 @@ class Reactions extends Component
 
     public function quickReact(): void
     {
-        $defaultReaction = config('ld-likes.default_reaction', 'like');
+        $defaultReaction = config('sb-likes.default_reaction', 'like');
         $this->react($defaultReaction);
     }
 
     public function render(): View
     {
-        return view('ld-likes::components.reactions', [
+        return view('sb-likes::components.reactions', [
             'sizeClasses' => $this->getSizeClasses(),
         ]);
     }

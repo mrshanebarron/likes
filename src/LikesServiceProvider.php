@@ -11,13 +11,13 @@ class LikesServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/ld-likes.php', 'ld-likes');
+        $this->mergeConfigFrom(__DIR__ . '/../config/sb-likes.php', 'sb-likes');
     }
 
     public function boot(): void
     {
         // Register Livewire component
-        Livewire::component('ld-reactions', Reactions::class);
+        Livewire::component('sb-reactions', Reactions::class);
 
         // Register Blade component
         $this->loadViewComponentsAs('ld', [
@@ -25,7 +25,7 @@ class LikesServiceProvider extends ServiceProvider
         ]);
 
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'ld-likes');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-likes');
 
         // Load routes
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
@@ -34,23 +34,23 @@ class LikesServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Config
             $this->publishes([
-                __DIR__ . '/../config/ld-likes.php' => config_path('ld-likes.php'),
-            ], 'ld-likes-config');
+                __DIR__ . '/../config/sb-likes.php' => config_path('sb-likes.php'),
+            ], 'sb-likes-config');
 
             // Views
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/ld-likes'),
-            ], 'ld-likes-views');
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/sb-likes'),
+            ], 'sb-likes-views');
 
             // Migrations
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
-            ], 'ld-likes-migrations');
+            ], 'sb-likes-migrations');
 
             // Lottie assets
             $this->publishes([
-                __DIR__ . '/../resources/lottie' => public_path('vendor/ld-likes/lottie'),
-            ], 'ld-likes-assets');
+                __DIR__ . '/../resources/lottie' => public_path('vendor/sb-likes/lottie'),
+            ], 'sb-likes-assets');
         }
     }
 }

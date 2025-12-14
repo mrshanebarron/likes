@@ -41,11 +41,11 @@
                 renderer: 'svg',
                 loop: false,
                 autoplay: true,
-                path: '/vendor/ld-likes/lottie/' + lottieFile
+                path: '/vendor/sb-likes/lottie/' + lottieFile
             });
         }
     }"
-    class="ld-reactions inline-flex items-center gap-2"
+    class="sb-reactions inline-flex items-center gap-2"
 >
     {{-- Main Button --}}
     <div class="relative" @mouseenter="openPicker()" @mouseleave="closePicker()">

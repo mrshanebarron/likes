@@ -41,17 +41,17 @@ class Reactions extends Component
         $this->modelType = get_class($model);
         $this->modelId = $model->getKey();
 
-        $this->showCounts = $showCounts ?? config('ld-likes.show_counts', true);
-        $this->showSummary = $showSummary ?? config('ld-likes.show_summary', true);
+        $this->showCounts = $showCounts ?? config('sb-likes.show_counts', true);
+        $this->showSummary = $showSummary ?? config('sb-likes.show_summary', true);
         $this->pickerPosition = $pickerPosition;
         $this->size = $size;
         $this->animated = $animated;
         $this->guestReactions = $guestReactions;
-        $this->reactions = !empty($reactions) ? $reactions : config('ld-likes.reactions', []);
+        $this->reactions = !empty($reactions) ? $reactions : config('sb-likes.reactions', []);
 
         // API endpoints for JavaScript interactions
-        $this->reactEndpoint = $reactEndpoint ?? route('ld-likes.react');
-        $this->statusEndpoint = $statusEndpoint ?? route('ld-likes.status');
+        $this->reactEndpoint = $reactEndpoint ?? route('sb-likes.react');
+        $this->statusEndpoint = $statusEndpoint ?? route('sb-likes.status');
 
         $this->loadState($model);
     }
@@ -112,7 +112,7 @@ class Reactions extends Component
 
     public function render(): View
     {
-        return view('ld-likes::components.blade-reactions', [
+        return view('sb-likes::components.blade-reactions', [
             'sizeClasses' => $this->getSizeClasses(),
         ]);
     }

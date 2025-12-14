@@ -28,7 +28,7 @@
 import { ref, computed } from 'vue';
 
 export default {
-  name: 'LdLikes',
+  name: 'SbLikes',
   props: {
     modelValue: { type: Boolean, default: false },
     count: { type: Number, default: 0 },

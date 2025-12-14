@@ -21,7 +21,7 @@ class ReactionsController extends Controller
         $reaction = $request->input('reaction');
 
         // Validate reaction type exists in config
-        $validReactions = array_keys(config('ld-likes.reactions', []));
+        $validReactions = array_keys(config('sb-likes.reactions', []));
         if (!in_array($reaction, $validReactions)) {
             return response()->json([
                 'success' => false,

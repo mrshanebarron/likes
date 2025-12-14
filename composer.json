@@ -1,0 +1,32 @@
+{
+    "name": "mrshanebarron/likes",
+    "description": "Facebook-style reaction components with animated Lottie emojis for Laravel",
+    "keywords": ["laravel", "livewire", "vue", "reactions", "likes", "emojis", "lottie"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane Barron",
+            "email": "mrshanebarron@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "livewire/livewire": "^3.0",
+        "mrshanebarron/button": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelDesign\\Likes\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelDesign\\Likes\\LikesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

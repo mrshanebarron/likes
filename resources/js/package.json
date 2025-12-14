@@ -1,0 +1,20 @@
+{
+  "name": "@laraveldesign/likes",
+  "version": "1.0.0",
+  "description": "Facebook-style reaction components with animated Lottie emojis for Vue 3",
+  "main": "vue/index.ts",
+  "types": "vue/index.ts",
+  "keywords": ["vue", "vue3", "reactions", "likes", "emojis", "lottie", "facebook"],
+  "author": "Shane Barron <mrshanebarron@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrshanebarron/likes.git"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "lottie-web": "^5.12.0"
+  }
+}

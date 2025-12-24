@@ -2,6 +2,7 @@
 
 namespace MrShaneBarron\Likes;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use MrShaneBarron\Likes\Livewire\Reactions;
@@ -19,10 +20,8 @@ class LikesServiceProvider extends ServiceProvider
         // Register Livewire component
         Livewire::component('sb-reactions', Reactions::class);
 
-        // Register Blade component
-        $this->loadViewComponentsAs('ld', [
-            BladeReactions::class,
-        ]);
+        // Register Blade component with sb-likes namespace
+        Blade::component('sb-likes-blade-reactions', BladeReactions::class);
 
         // Load views
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-likes');

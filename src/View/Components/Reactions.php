@@ -114,6 +114,18 @@ class Reactions extends Component
     {
         return view('sb-likes::components.blade-reactions', [
             'sizeClasses' => $this->getSizeClasses(),
+            'reactions' => $this->reactions,
+            'userReaction' => $this->userReaction,
+            'totalCount' => $this->totalCount,
+            'topReactions' => $this->topReactions,
+            'animated' => $this->animated,
+            'guestReactions' => $this->guestReactions,
+            'modelType' => $this->modelType,
+            'modelId' => $this->modelId,
+            'reactEndpoint' => $this->reactEndpoint,
+            'showCounts' => $this->showCounts,
+            'showSummary' => $this->showSummary,
+            'pickerPosition' => $this->pickerPosition,
         ]);
     }
 }
